@@ -134,9 +134,7 @@ function App() {
         </div>
 
         <div className="mt-10 lg:flex items-center justify-between gap-2">
-          <ul className="flex items-center 
-          justify-between bg-slate-100 py-2 px-4 rounded 
-          shadow lg:flex-1 ">
+          <ul className="flex items-center justify-between bg-slate-100 py-2 px-4 rounded shadow lg:flex-1">
             <li onClick={handleMinus} className="cursor-pointer ">
               <img src={minus} alt=""/>
             </li>
