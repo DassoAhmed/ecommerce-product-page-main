@@ -4,13 +4,15 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import avatar from "../images/image-avatar.png";
 import menu from "../images/icon-menu.svg";
 import close from "../images/icon-close.svg";
+import Cart from "./Cart";
 
 export default function Header () {
-    const[isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
+    const [cartIsOpen, setCartIsOpen] = useState(false);
 
     return (
       <>
-        <header className="flex items-center justify-between 
+        <header className="relative flex items-center justify-between 
         p-8 border-b border-slate-400 max-w-7xl mx-auto ">
         <div className="flex items-center justify-start 
         gap-4 ">
@@ -40,10 +42,18 @@ export default function Header () {
   
         <div>
           <ul className="flex items-center justify-start gap-4">
-            <li><button>
-              <AiOutlineShoppingCart className="text-2xl text-slate-600 "/>
-            </button></li>
-            <li><img src={avatar} alt = "" className=" w-12"/></li>
+            <li>
+            <button onClick={() => setCartIsOpen(!cartIsOpen)}>
+              <AiOutlineShoppingCart className="text-2xl
+               text-slate-600 "/>
+            </button>
+            </li>
+            <li>
+                {cartIsOpen && <Cart/>}
+            </li>
+            <li>
+            <img src={avatar} alt = "" className=" w-12"/>
+            </li>
           </ul>
         </div>
         </header>
